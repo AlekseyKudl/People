@@ -12,6 +12,15 @@ public class Main {
     anna.hello();
     kate.hello();
     artem.hello();
+    maxim.jobTitle = "бренд-менеджер";
+    anna.jobTitle = "методист образовательных программ";
+    kate.jobTitle = "продакт-менеджер";
+    artem.jobTitle = "директор по развитию бизнеса";
+        maxim.hello2();
+        anna.hello2();
+        kate.hello2();
+        artem.hello2();
+
     }
 
 }
