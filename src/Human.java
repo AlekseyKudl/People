@@ -7,7 +7,6 @@ public class Human {
         this.name = name;
         this.town = town;
     }
-
     @Override
     public String toString() {
         return super.toString();
