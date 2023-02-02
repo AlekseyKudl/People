@@ -1,13 +1,31 @@
 public class Human {
-    int birthYear;
+    private int birthYear;
     String name;
-    String town;
+    private String town;
 
     String jobTitle;
-    Human (int birthYear, String name, String town){
-        this.birthYear = birthYear;
-        this.name = name;
-        this.town = town;
+    Human (int birthYear, String name, String town, String jobTitle) {
+        if (name == null || name.isBlank()) {
+            this.name = "Информация не указана";
+        } else {
+            this.name = name;
+        }
+        if (town == null || town.trim().length() == 0) {
+            this.town = "Информация не указана";
+        } else {
+            this.town = town;
+        }
+        if (birthYear < 0){
+            this.birthYear = 0;
+        }else {
+            this.birthYear = birthYear;
+        }
+        if (jobTitle == null) {
+            this.jobTitle = "Информация не указана";
+        }else {
+            this.jobTitle = jobTitle;
+        }
+
     }
 
     public void setBirthYear(int birthYear) {
@@ -42,28 +60,8 @@ public class Human {
         }
     }
 
-    Human (int birthYear, String name, String town, String jobTitle){
-        if (birthYear < 0){
-            this.birthYear = 0;
-        }else {
-            this.birthYear = birthYear;
-        }
-        if (name == null){
-            this.name = "Информация не указана";
-        }else {
-            this.name = name;
-        }
-        if (town == null) {
-            this.name = "Информация не указана";
-        }else {
-            this.town = town;
-        }
-        if (jobTitle == null) {
-            this.name = "Информация не указана";
-        }else {
-            this.jobTitle = jobTitle;
-        }
-    }
+
+
     @Override
     public String toString() {
         return super.toString();

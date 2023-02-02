@@ -4,12 +4,12 @@ import java.sql.SQLOutput;
 public class Main {
     public static final Auto[] AUTOS = new Auto[11];
     public static void main(String[] args) {
-    Human maxim = new Human(1988, "Максим", "Минск");
-    Human anna = new Human(1993, "Аня", "Москва");
+    Human maxim = new Human(1988, "Максим", "Минск","бренд-менеджер");
+    Human anna = new Human(1993, "Аня", "Москва","методист образовательных программ");
 
-    Human kate = new Human(1992, "Катя", "Калининград");
+    Human kate = new Human(1992, "Катя", "Калининград","продакт-менеджер");
 
-    Human artem = new Human(1995, "Артем", "Москва");
+    Human artem = new Human(1995, "Артем", "Москва","директор по развитию бизнеса");
     maxim.hello();
     anna.hello();
     kate.hello();
@@ -55,6 +55,8 @@ public class Main {
         AUTOS[10] = new Auto("Hyundai", "Avante", 1.6, "оранжевый", 2016, "Южная Корея");
 
         printFullinfo();
+        System.out.println("_____________________________________________________");
+
     }
     private static void printFullinfo() {
         for (Auto auto : AUTOS) {
@@ -62,6 +64,34 @@ public class Main {
                 System.out.println(auto);
             }
         }
+        System.out.println("_____________________________________________________");
+
+        //задание 1 урок 2
+        //Владимир, который родился в 2001 году, живет в Казани, сейчас нигде не работает.
+        Human vlad = new Human(2001, "Владимир", "Казань", "безработный");
+        vlad.hello2();
+        System.out.println("_____________________________________________________");
+        //Роза обыкновенная из Голландии, стоимость штуки — 35,59 рублей.
+        //Хризантема, стоимость штуки — 15 рублей, срок стояния — 5 дней.
+        //Пион из Англии, стоимость штуки — 69,9 рублей, срок стояния — 1 день.
+        //Гипсофила, страна происхождения — Турция, стоимость штуки — 19,5 рублей, срок стояния — 10 дней.
+
+
+        Flowers rose = new Flowers("Роза обыкновенная", "Голландия", 35.59, 0);
+        Flowers hriz = new Flowers("Хризантема", "", 15, 5);
+        Flowers pion = new Flowers("Пион", "Англия", 69.9, 1);
+        Flowers gips = new Flowers("Гипсофила", "Турция", 19.5, 10);
+        System.out.println(rose);
+        rose.plant();
+        hriz.plant();
+        pion.plant();
+        gips.plant();
+        Bouquet bouquet1 = new Bouquet(
+                new Flowers[]{rose, rose, rose, hriz, hriz, pion, gips});
+        Bouquet bouquet2 = new Bouquet(
+                new Flowers[]{rose, rose, hriz, hriz, gips});
+        System.out.println(bouquet1);
+        System.out.println(bouquet2);
     }
 
 }
